@@ -50,9 +50,7 @@
             <div class="card-body">
               <h5 class="card-title">Liste des repas</h5>
 
-              <ul id="mealList" class="list-group">
-                <!-- rempli dynamiquement -->
-              </ul>
+              <ul id="mealList" class="list-group"></ul>
             </div>
           </div>
         </div>
@@ -84,6 +82,27 @@
                   <span id="menuTotalTTC">0</span> €
                 </p>
               </div>
+            </div>
+          </div>
+        </div>
+        <!-- Portefeuille -->
+        <div class="col-md-4">
+          <div class="card shadow">
+            <div class="card-body">
+              <h5 class="card-title">Portefeuille</h5>
+              <p class="fs-4">Solde : <strong id="walletAmount">--</strong></p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Historique des commandes -->
+        <div class="col-md-4">
+          <div class="card shadow">
+            <div class="card-body">
+              <h5 class="card-title">Historique des commandes</h5>
+              <ul id="orderHistory" class="list-group">
+                <!-- rempli dynamiquement -->
+              </ul>
             </div>
           </div>
         </div>

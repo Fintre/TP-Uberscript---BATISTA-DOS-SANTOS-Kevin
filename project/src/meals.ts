@@ -7,6 +7,9 @@ export type Meal = {
   price: number;
 };
 
+// Omit : un repas en cours de création n'a pas encore d'id
+export type MealDraft = Omit<Meal, "id">;
+
 export type Order = {
   id: number;
   meals: Meal[];
@@ -29,4 +32,8 @@ export async function fetchMeals(): Promise<Meal[]> {
     console.error("Erreur lors du chargement des repas");
     throw error;
   }
+}
+
+export function createMeal(draft: MealDraft, id: number): Meal {
+  return { id, ...draft };
 }
