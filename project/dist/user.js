@@ -8,6 +8,13 @@ export class User {
         this.wallet = this.loadWallet(wallet);
         this.orders = this.loadOrders();
     }
+    updateProfile(updates) {
+        if (updates.name !== undefined)
+            this.name = updates.name;
+        if (updates.wallet !== undefined)
+            this.wallet = updates.wallet;
+        // id non modifiable volontairement même si présent dans Partial
+    }
     loadOrders() {
         const stored = localStorage.getItem(STORAGE_KEY_ORDERS);
         return stored ? JSON.parse(stored) : [];
@@ -32,6 +39,5 @@ export class User {
         };
         this.orders.push(order);
         this.saveToStorage();
-        console.log(`✅ Commande #${order.id} — ${meal.name} (${meal.price}€) — Solde restant : ${this.wallet}€`);
     }
 }

@@ -24,3 +24,6 @@ export function fetchMeals() {
         }
     });
 }
+export function createMeal(draft, id) {
+    return Object.assign({ id }, draft);
+}
